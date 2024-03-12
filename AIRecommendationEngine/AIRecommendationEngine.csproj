@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A2C578B-5DA8-494C-BDD6-2FF24DA4FE18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIRecommendationEngine</RootNamespace>
+    <AssemblyName>AIRecommendationEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RecommendationEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AIRecomnder.Pearsonalgo\AIRecomnder.Pearsonalgo.csproj">
+      <Project>{47dcc229-7964-4dc2-acfe-8094861c4e77}</Project>
+      <Name>AIRecomnder.Pearsonalgo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookDataServiceLayer\BookDataServiceLayer.csproj">
+      <Project>{a2698a6d-cbd1-46b9-8cb5-e5fe95da9272}</Project>
+      <Name>BookDataServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BooksDataDetails\BooksDataDetails.csproj">
+      <Project>{b95ce947-bcb6-44eb-b007-a4a20f003334}</Project>
+      <Name>BooksDataDetails</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAggregator_m3\AIDataAggregator_m3.csproj">
+      <Project>{d01354d5-c56f-4504-bbf0-d8776f6ffab1}</Project>
+      <Name>AIDataAggregator_m3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataCacher\DataCacher.csproj">
+      <Project>{e9ccc2fe-322b-40bf-a368-222486c08484}</Project>
+      <Name>DataCacher</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLoader\DataLoader.csproj">
+      <Project>{8ce941e3-2e38-4441-96f5-ea963a9aaabb}</Project>
+      <Name>DataLoader</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
